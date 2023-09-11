@@ -1,0 +1,88 @@
+#Challenge 1: Square Numbers and Return Their Sum
+class SquareSum:  
+    def Square(self,num1,num2,num3):
+        sum = 0
+        num1 = num1**2
+        num2 = num2**2
+        num3 = num3**2
+        sum = num1 + num2 + num3
+        return sum
+
+obj=SquareSum()
+num1=int(input())
+num2=int(input())
+num3=int(input())
+obj.Square(num1,num2,num3)
+
+
+#Challenge 2: Implement a Calculator Class
+class calculator:
+    def add(self,a,b):
+        return a+b
+    def subtract(self,a,b):
+        return a-b
+    def multiply(self,a,b):
+        return a*b
+    def divide(self,a,b):
+        return a/b
+    
+obj=calculator()
+a=float(input())
+b=float(input())
+obj.add(a,b)
+obj.subtract(a,b)
+obj.multiply(a,b)
+obj.divide(a,b)
+
+#Challenge 3: Implement the Complete Student Class
+class Student:
+    def setName(self, name):
+        self.__name = name
+
+    def getName(self):
+        return self.__name
+
+    def setRollNumber(self, rollNumber):
+        self.__rollNumber = rollNumber
+
+    def getRollNumber(self):
+        return self.__rollNumber
+    
+#Challenge 4: Implement a Banking Account
+class Account:
+    def __init__(self, title=None, balance=0):
+        self.title = title
+        self.balance = balance
+
+
+class SavingsAccount(Account):
+    def __init__(self, title=None, balance=0, interestRate=0):
+        super().__init__(title, balance)
+        self.interestRate = interestRate
+
+
+#Challenge 5: Handling a Bank Account
+class Bank_Account:
+    def __init__(self):
+        self.balance=0
+        print("Welcome to Deposit & Withdrawal Machine!")
+        
+    def deposit(self):
+        amount=float(input("Enter amount to be deposited: "))
+        self.balance += amount
+        print("Amount Deposited: ",amount)
+    def withdraw(self):
+        amount = float(input("Enter amount to withdraw: "))
+        if self.balance>=amount:
+            self.balance-=amount
+            print("You withdraw: ",amount)
+        else:
+            print("Insufficient balance ")
+    def display(self):
+        print("Net Available Balance=",self.balance)
+
+s = Bank_Account()
+
+s.deposit()
+s.withdraw()
+s.display()
